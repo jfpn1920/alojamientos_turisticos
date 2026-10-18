@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f2f4f6;
     color: #333333;
 }
-
+/*------------------------------------*/
+/*--|estilo_alojamientos_turisticos|--*/
+/*------------------------------------*/
 .encabezado {
     width: 100%;
     padding: 30px 20px;
@@ -17,65 +18,64 @@ body {
     background: #6f93c4;
     color: #ffffff;
 }
-
 .encabezado h1 {
     margin-bottom: 8px;
     font-size: 30px;
 }
-
 .encabezado p {
     font-size: 16px;
+    line-height: 1.5;
 }
-
 .contenedor_principal {
     width: 100%;
     max-width: 1100px;
     margin: 25px auto;
     padding: 0 20px;
 }
-
+/*-------------------------------*/
+/*--|estilo_seccion_formulario|--*/
+/*-------------------------------*/
 .seccion_formulario {
-    background: #ffffff;
+    margin-bottom: 25px;
     padding: 20px;
+    background: #ffffff;
     border: 1px solid #cccccc;
     border-radius: 8px;
-    margin-bottom: 25px;
 }
-
 .seccion_formulario h2 {
     margin-bottom: 18px;
     font-size: 21px;
 }
-
 #formulario_alojamiento {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
-
 .campo_formulario {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
-
 .campo_formulario label {
     font-size: 14px;
     font-weight: bold;
 }
-
 .campo_formulario input {
     width: 100%;
+    min-width: 0;
     padding: 10px;
     border: 1px solid #bbbbbb;
     border-radius: 5px;
     outline: none;
+    background: #ffffff;
+    color: #333333;
+    font-size: 14px;
 }
-
 .campo_formulario input:focus {
     border-color: #6f93c4;
+    box-shadow: 0 0 0 2px rgba(111, 147, 196, 0.2);
 }
-
 .boton_agregar {
     width: 100%;
     padding: 11px;
@@ -85,70 +85,77 @@ body {
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
-
 .boton_agregar:hover {
     background: #587eaf;
 }
-
+.boton_agregar:focus-visible {
+    outline: 2px solid #333333;
+    outline-offset: 3px;
+}
+/*---------------------------------*/
+/*--|estilo_seccion_alojamientos|--*/
+/*---------------------------------*/
 .seccion_alojamientos {
     width: 100%;
 }
-
 .encabezado_alojamientos {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     margin-bottom: 15px;
 }
-
 .encabezado_alojamientos h2 {
     font-size: 22px;
 }
-
 #contador_alojamientos {
-    font-size: 14px;
     color: #666666;
+    font-size: 14px;
+    text-align: right;
 }
-
 .contenedor_tarjetas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+    align-items: stretch;
 }
-
+/*--------------------------------*/
+/*--|estilo_tarjeta_alojamiento|--*/
+/*--------------------------------*/
 .tarjeta_alojamiento {
+    min-width: 0;
     overflow: hidden;
     background: #ffffff;
     border: 1px solid #cccccc;
     border-radius: 8px;
 }
-
 .imagen_alojamiento {
+    display: block;
     width: 100%;
     height: 170px;
     object-fit: cover;
+    background: #e4e8ec;
 }
-
 .contenido_tarjeta {
     padding: 15px;
 }
-
 .contenido_tarjeta h3 {
     margin-bottom: 9px;
     font-size: 19px;
+    overflow-wrap: anywhere;
 }
-
 .ubicacion_alojamiento {
     margin-bottom: 8px;
     color: #666666;
+    overflow-wrap: anywhere;
 }
-
 .precio_alojamiento {
     margin-bottom: 13px;
     font-weight: bold;
+    overflow-wrap: anywhere;
 }
-
 .boton_eliminar {
     width: 100%;
     padding: 9px;
@@ -157,8 +164,12 @@ body {
     background: #d9534f;
     color: #ffffff;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
-
 .boton_eliminar:hover {
     background: #bd3e3a;
+}
+.boton_eliminar:focus-visible {
+    outline: 2px solid #333333;
+    outline-offset: 3px;
 }
